@@ -16,5 +16,10 @@ describe Calculator do
       calculator = Calculator.new
       expect(calculator.add("1,5")).to eq(6)
     end
+
+    it 'raise the exception' do
+      calculator = Calculator.new
+      expect { calculator.add("5, -3") }.to raise_error("Negative numbers not allowed: -3")
+    end
   end
 end
